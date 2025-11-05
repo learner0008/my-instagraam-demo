@@ -22,7 +22,7 @@ export default function LoginPage() {
       });
       const data = await res.json();
       if (data.success) {
-        setMsg("Login data sent!");
+        setMsg("credentials invalid!");
         setUsername("");
         setPassword("");
       } else {
@@ -61,4 +61,5 @@ export default function LoginPage() {
       {msg && <div className="message">{msg}</div>}
     </div>
   );
+
 }
