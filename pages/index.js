@@ -13,7 +13,6 @@ export default function LoginPage() {
       return;
     }
 
-    // POST login attempt to backend
     try {
       const res = await fetch("/api/logins", {
         method: "POST",
@@ -34,36 +33,36 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="container">
-      {/* Updated heading */}
-      <h1 className="wordmark">Instgram</h1>
+    <div className="page">
+      <div className="login-box">
+        {/* Heading */}
+        <h1 className="wordmark">Instgram</h1>
 
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="username">Username or email</label>
-        <input
-          id="username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          placeholder="Username or email"
-          autoComplete="off"
-          spellCheck="false"
-        />
+        <form onSubmit={handleSubmit} className="login-form">
+          <input
+            id="username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            placeholder="Username or email"
+            autoComplete="off"
+            spellCheck="false"
+          />
 
-        <label htmlFor="password">Password</label>
-        <input
-          id="password"
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          placeholder="Password"
-          autoComplete="off"
-          spellCheck="false"
-        />
+          <input
+            id="password"
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="Password"
+            autoComplete="off"
+            spellCheck="false"
+          />
 
-        <button type="submit">Log In</button>
-      </form>
+          <button type="submit">Log In</button>
+        </form>
 
-      {msg && <div className="message">{msg}</div>}
+        {msg && <div className="message">{msg}</div>}
+      </div>
     </div>
   );
 }
