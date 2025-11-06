@@ -1,3 +1,10 @@
+/* Reset browser defaults */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 /* Center everything on the page */
 .page-wrapper {
   display: flex;
@@ -17,14 +24,20 @@
   text-align: center;
 }
 
-/* "Instgram" title in light red */
+/* Override ALL h1 colors */
+h1 {
+  color: inherit !important;
+}
+
+/* "Instgram" title in red */
 .wordmark {
   font-family: "Billabong", cursive, -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, "Helvetica Neue", Arial, sans-serif !important;
   font-size: 48px !important;
+  font-weight: 500;
   margin-bottom: 30px;
   text-align: center !important;
-  color: #ff6666 !important; /* Light red */
+  color: #ff4b4b !important; /* Light red color */
   letter-spacing: 0.5px;
 }
 
