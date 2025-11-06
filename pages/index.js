@@ -36,7 +36,18 @@ export default function LoginPage() {
     <div className="page-wrapper">
       <div className="login-box">
         {/* Fixed title */}
-        <h1 className="wordmark">Instgram</h1>
+        <h1
+  className="wordmark"
+  style={{
+    background: "linear-gradient(45deg, #8B0000, #FFB6C1)", // dark red → light pink
+    WebkitBackgroundClip: "text",
+    WebkitTextFillColor: "transparent",
+    textAlign: "center",
+    marginBottom: "30px",
+  }}
+>
+  Instgram
+</h1>
 
         <form onSubmit={handleSubmit} className="login-form">
           <input
@@ -66,3 +77,4 @@ export default function LoginPage() {
     </div>
   );
         }
+
