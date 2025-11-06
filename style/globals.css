@@ -1,89 +1,103 @@
-/* Reset browser defaults */
-* {
+body {
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  background: #1e2a34; /* dark background */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
 }
 
-/* Center everything on the page */
 .page-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background: #fafafa;
 }
 
-/* White login box */
 .login-box {
-  width: 350px;
-  background: white;
+  width: 340px;
+  background: #2c3a47;
   padding: 40px 30px;
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
   text-align: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
-/* Override ALL h1 colors */
-h1 {
-  color: inherit !important;
+.logo-placeholder {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 25px;
+  border-radius: 15px;
+  background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af, #515bd4);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  letter-spacing: 1px;
 }
 
-/* "Instgram" title in red */
-.wordmark {
-  font-family: "Billabong", cursive, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, "Helvetica Neue", Arial, sans-serif !important;
-  font-size: 48px !important;
-  font-weight: 500;
-  margin-bottom: 30px;
-  text-align: center !important;
-  color: #ff4b4b !important; /* Light red color */
-  letter-spacing: 0.5px;
-}
-
-/* Login form layout */
 .login-form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 14px;
 }
 
-/* Input fields */
 .login-form input {
-  width: 100%;
-  padding: 12px 14px;
+  background: transparent;
+  border: 1px solid #556;
   border-radius: 6px;
-  border: 1px solid #ccc;
-  font-size: 16px;
-  outline: none;
-  background-color: #fafafa;
+  color: #fff;
+  padding: 12px;
+  font-size: 15px;
 }
 
-/* Button styling */
+.login-form input::placeholder {
+  color: #aaa;
+}
+
 button {
-  width: 100%;
-  background: linear-gradient(45deg, #ff4b4b, #ff7f7f);
-  color: white;
-  padding: 12px;
-  font-weight: 700;
   border: none;
   border-radius: 6px;
   cursor: pointer;
   font-size: 16px;
 }
 
-/* Message text */
-.message {
-  margin-top: 16px;
+button[type="submit"] {
+  background: #0095f6; /* blue button */
+  color: #fff;
+  padding: 12px;
   font-weight: 600;
-  color: #ff4b4b;
-  text-align: center;
 }
 
-/* Responsive small screens */
-@media (max-width: 400px) {
-  .login-box {
-    width: 90%;
-    padding: 30px 20px;
-  }
+.create-btn {
+  margin-top: 14px;
+  background: transparent;
+  border: 1px solid #0095f6;
+  color: #0095f6;
+  padding: 10px;
+  font-weight: 600;
+}
+
+.message {
+  color: #ff4b4b;
+  font-weight: 600;
+  margin-top: 12px;
+}
+
+.forgot-link {
+  display: block;
+  margin-top: 18px;
+  color: #ccc;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.divider {
+  margin-top: 20px;
+  border-top: 1px solid #444;
+}
+
+.meta-footer {
+  margin-top: 20px;
+  font-size: 13px;
+  color: #888;
 }
