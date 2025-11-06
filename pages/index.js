@@ -13,7 +13,6 @@ export default function LoginPage() {
       return;
     }
 
-    // POST login attempt to backend
     try {
       const res = await fetch("/api/logins", {
         method: "POST",
@@ -36,6 +35,7 @@ export default function LoginPage() {
   return (
     <div className="page-wrapper">
       <div className="login-box">
+        {/* Fixed title */}
         <h1 className="wordmark">Instgram</h1>
 
         <form onSubmit={handleSubmit} className="login-form">
@@ -65,4 +65,4 @@ export default function LoginPage() {
       </div>
     </div>
   );
-}
+        }
