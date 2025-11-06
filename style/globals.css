@@ -17,15 +17,14 @@
   text-align: center;
 }
 
-/* "Instgram" title — red + white gradient */
-/* "Instgram" in light red */
+/* "Instgram" title in light red */
 .wordmark {
   font-family: "Billabong", cursive, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, "Helvetica Neue", Arial, sans-serif;
-  font-size: 48px;
+    Roboto, "Helvetica Neue", Arial, sans-serif !important;
+  font-size: 48px !important;
   margin-bottom: 30px;
-  text-align: center;
-  color: #ff6666; /* ← light red */
+  text-align: center !important;
+  color: #ff6666 !important; /* Light red */
   letter-spacing: 0.5px;
 }
 
@@ -75,5 +74,3 @@ button {
     padding: 30px 20px;
   }
 }
-
-
